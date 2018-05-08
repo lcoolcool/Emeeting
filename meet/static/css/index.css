@@ -1,0 +1,64 @@
+body {
+        font-size: 14px;
+    }
+
+    .shade {
+        position: fixed;
+        z-index: 1040;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #999;
+        filter: alpha(opacity=50);
+        -moz-opacity: 0.5;
+        opacity: 0.5;
+    }
+
+    .loading {
+        position: fixed;
+        z-index: 1050;
+        top: 40%;
+        left: 50%;
+        height: 32px;
+        width: 32px;
+        margin: 0 0 0 -16px;
+        background: url(../img/loading.gif);
+    }
+
+
+    .clearfix{
+        padding: 10px 0;
+
+    }
+    .input-group{
+        width: 230px;
+        float:left;
+    }
+    .save-btn{
+        padding: 0 5px;float: left
+    }
+
+    table > tbody td {
+        height: 80px;
+        width: 80px;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+
+    table > tbody td.chosen {
+        background-color: #ebccd1;
+    }
+
+    table > tbody td.selected {
+        background-color:#d58512 ;
+    }
+    .mycolor{
+        background-color: #EEE685;
+    }
+    .unable{
+
+        color: #FF0000;
+        opacity: 0.5;
+    }

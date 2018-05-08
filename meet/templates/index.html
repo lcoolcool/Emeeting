@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>预定</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'datetimepicker/css/bootstrap-datetimepicker.min.css' %}">
+    <link rel="stylesheet" href="{% static 'sweetalert2/dist/sweetalert2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<div class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+          <h1 class="text-center">会议室预定</h1>
+  </div>
+  <div class="panel-body">
+        <div class="clearfix">
+        <div style="float: left;color: red" id="errors"></div>
+        <div class='input-group'>
+{#            时间插件#}
+            <input type='text' class="form-control" id='datetimepicker11' placeholder="请选择日期"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar">
+                </span>
+            </span>
+        </div>
+        <div class="save-btn">
+            <a id="save"  class="btn btn-primary">保存</a>
+        </div>
+        <div class="pull-right">
+            <b>hello {{ name }} </b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'meet:log_out' %}">注销</a>
+        </div>
+    </div>
+
+    <table class="table table-bordered  table-striped" style="border:1px solid red">
+        <thead>
+        <tr>
+            <th>会议室</th>
+{#            拿到从后端发过来的所有时间段#}
+            {% for choice in time_choices %}
+                <th>{{ choice.1 }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody id="tBody">
+{#        tbody中的内容包含未预定信息和预定信息，且需要实时更新，所以这里用后端传递的方式获取#}
+        </tbody>
+    </table>
+</div>
+  </div>
+</div>
+
+
+<!-- 遮罩层开始 -->
+<div id='shade' class='shade hide'></div>
+<!-- 遮罩层结束 -->
+<!-- 加载层开始 -->
+<div id='loading' class='loading hide'></div>
+<!-- 加载层结束 -->
+
+<script src="{% static 'jquery/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'jquery-cookie/jquery.cookie.js' %}"></script>
+<script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
+<script src="{% static 'datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static 'datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+<script src="{% static 'sweetalert2/dist/sweetalert2.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
