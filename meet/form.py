@@ -39,9 +39,9 @@ class RegForm(Form):
         error_messages={'required': '请输入邮箱'},
         widget=widgets.EmailInput(attrs={'class': 'form-control', 'placeholder': '邮箱', 'id': 'emails'})
     )
-    captcha = CaptchaField(
-        required=True,
-        error_messages={'required': '请输入邮箱'},
-        widget=widgets.TextInput(attrs={'class': 'form-control', 'placeholder': '用户名', 'id': 'name'})
-    )
+#    captcha = CaptchaField(
+#       required=True,
+#        error_messages={'required': '请输入邮箱'},
+#        widget=widgets.TextInput(attrs={'class': 'form-control', 'placeholder': '用户名', 'id': 'name'})
+#    )
 
